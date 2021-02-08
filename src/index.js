@@ -1,5 +1,6 @@
-import "./styles.css";
-import menu from "./menu";
+// import "styles.css";
+import menu from "./menu.js";
+// --------------------------
 
 const menuItems = menu.items;
 
