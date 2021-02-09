@@ -12,38 +12,40 @@ const sortItems = () => {
     })
 }
 
-
-// render items
+// categorize, check if spicy, render items
 const renderItems = () => menuItems.forEach(item => {
     
     const starters = document.querySelector('#starters');
     const pasta = document.querySelector('#pasta');
     const pizza = document.querySelector('#pizza');
+
     const name = document.createElement('h3');
     const description = document.createElement('p');
+    const price = document.createElement('p');
+    const spicy = document.createElement('span');
+    spicy.classList.add('spice')
+
+    name.textContent = item.name
+    description.textContent = item.description
+    price.textContent = `$ ${item.price}`
+    spicy.innerHTML = `<img width='16' height='16' src='../assets/spicy.svg'>`
+
+    item.spicy ? name.append(spicy) : null;
 
     if (item.type === 'starters') {
-        name.textContent = item.name
-        description.textContent = item.description
-        starters.append(name)
-        starters.append(description)
+        starters.append(name, description, price)
     } else if (item.type === 'pasta') {
-        name.textContent = item.name
-        description.textContent = item.description
-        pasta.append(name)
-        pasta.append(description)
+        pasta.append(name, description, price)
     } else if (item.type === 'pizza') {
-        name.textContent = item.name
-        description.textContent = item.description
-        pizza.append(name)
-        pizza.append(description)
+        pizza.append(name, description, price)
     }
 })
 
 
+
 const renderApp = () => {
     sortItems()
-    renderItems(menuItems)
+    renderItems()
 }
 
 

@@ -2,7 +2,7 @@ body {
   font-family: sans-serif;
 }
 
-.spicy:before {
+/* .spicy:before {
   width: 16px;
   height: 16px;
   content: "";
@@ -12,4 +12,8 @@ body {
   padding-right: 3px;
   position: relative;
   top: 2px;
+} */
+
+.spice {
+  background-color: red;
 }
