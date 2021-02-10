@@ -12,8 +12,6 @@ const sortItems = () => {
     })
 }
 
-
-
 // categorize, check if spicy, render items
 const renderItems = () => menuItems.forEach(item => {
 
@@ -23,21 +21,23 @@ const renderItems = () => menuItems.forEach(item => {
 
     const itemContainer = document.createElement('div')
     itemContainer.classList.add('item-container');
+
     const name = document.createElement('h3');
+    name.textContent = item.name;
+
     const description = document.createElement('p');
+    description.textContent = item.description;
+
     const price = document.createElement('p');
+    price.textContent = `$ ${item.price}`
+
     const spicy = document.createElement('span');
+    spicy.innerHTML = `<img width='16' height='16' src='../assets/spicy.svg'>`
     spicy.classList.add('spicy')
 
-    name.textContent = item.name
-    description.textContent = item.description
-    price.textContent = `$ ${item.price}`
-    spicy.innerHTML = `<img width='16' height='16' src='../assets/spicy.svg'>`
-
-    item.spicy ? name.append(spicy) : null;
-
     if(item.spicy) {
-        itemContainer.classList.add('spicy');
+        itemContainer.classList.add('spicy-option');
+        name.append(spicy);
     }
     
     if (item.type === 'starters') {
@@ -53,19 +53,18 @@ const renderItems = () => menuItems.forEach(item => {
 
 })
 
-document.querySelector('#check').onchange = function( ) {
-    menuItems.forEach(item => {
-        if(item.spicy) {
-            console.log(item)
-            document.querySelector('.spicy').parentNode.style.display = this.checked ? 'block' : 'none'
-        }
-    })
-};
-
 const renderApp = () => {
-    sortItems()
-    renderItems()
+
+    document.querySelector('#check').onchange = () => {
+        const input = document.querySelector('#check');
+        const spicyItems = document.querySelectorAll('.spicy-option');
+        spicyItems.forEach(item => {
+            item.style.display = input.checked ? 'block' : 'none'
+        })
+    };
+
+    sortItems();
+    renderItems();
 }
 
-console.log(menuItems);
 renderApp();
