@@ -1,88 +1,158 @@
-body {
-  font-family: sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kristi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+html {
+    font-size: 62.5%;
 }
 
-/* .spicy:before {
-  width: 16px;
-  height: 16px;
-  content: "";
-  background-image: url("../assets/spicy.svg");
-  background-repeat: no-repeat;
-  display: inline-block;
-  padding-right: 3px;
-  position: relative;
-  top: 2px;
-} */
+*,
+*:after,
+*:before { 
+    margin: 0
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+	font-size: 1.7rem;
+    color: #363442;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+}
+
+.background-image {
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+	width: 100vw;
+    display: flex;
+    background-image: url('../assets/italian-food.jpg');
+	justify-content: center;
+	align-items: flex-end;
+	flex-wrap:wrap;
+}
+
+h1 {
+    /* font-family:'Kristi', cursive; */
+	font-family: 'Lora', serif;
+	font-size: 7vw;
+	color: white;
+	display: flex;
+	margin: 0;
+	padding: 0 0 3rem 0;
+	opacity: 0.8;
+	text-shadow: 2px 2px black;
+}
+
+h2 {
+	font-family: 'Kristi', cursive;
+	font-weight: 400;
+	font-size: 6vw;
+	color: #a68b7c
+}
+
+
+
+main {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 2rem 10rem 10rem 10rem;
+}
+
+section {
+	
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 0px;
+	align-items: center;
+	padding: 0 4rem 6rem 4rem
+}
+
+.item-container {
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem 0 2rem 0;
+}
+
+.item-container:after {
+    content: "";
+    display: block;
+    border-bottom: 1px dotted #a68b7c;
+	width: 20rem;
+}
+
+h3 {
+	font-family: 'Lora', serif;
+	font-weight: 600;
+	font-size: 2rem;
+	text-align: center;
+	padding-bottom: 2rem;
+	flex: 1 1 0px;
+	
+}
+
+p {
+	text-align: center;
+	padding-bottom: 2rem;
+}
+
+.price {
+	font-family: 'Lora', serif;
+	font-weight: bold;
+	font-size: 2rem;
+	color: #a68b7c;
+	padding-bottom: 4rem;
+}
+
+.check-container {
+	padding: 2rem 0 2rem 0;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	background-color: #626369;
+	border-top: 1px dotted #ffb22c;
+	
+}
 
 .spicy {
-  background-color: red;
+	margin-left: 15px;
+	align-self: baseline;
 }
 
-.hide {
-  display: none
+label {
+	font-size: 2.5rem;
+	color: white;
 }
 
-
-/* toggle switch */
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+input[type=checkbox] {
+	cursor: pointer;
+	font-size: 3rem;
+	visibility: hidden;
 }
 
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+input[type=checkbox]:after {
+	content: "";
+	background-color: none;
+	display: inline-block;
+	margin-left: 10px;
+	width: 3.2rem;
+	height: 3.2rem;
+	visibility: visible;
+	border: 2px solid white;
+	border-radius: 25%;
 }
 
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
+input[type=checkbox]:checked:after {
+	content: "\2714";
+	text-align: center;
+	color: #bf0c0c;
+	background-color: white;
 }

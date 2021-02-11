@@ -30,9 +30,10 @@ const renderItems = () => menuItems.forEach(item => {
 
     const price = document.createElement('p');
     price.textContent = `$ ${item.price}`
+    price.classList.add('price')
 
     const spicy = document.createElement('span');
-    spicy.innerHTML = `<img width='16' height='16' src='../assets/spicy.svg'>`
+    spicy.innerHTML = `<img width='25' height='25' src='../assets/spicy-pepper.svg'>`
     spicy.classList.add('spicy')
 
     if(item.spicy) {
