@@ -124,13 +124,14 @@ label {
 	color: white;
 }
 
-input[type=checkbox] {
+input {
 	cursor: pointer;
 	font-size: 3rem;
 	visibility: hidden;
+	-moz-appearance:initial
 }
 
-input[type=checkbox]:after {
+input:after {
 	content: "";
 	background-color: none;
 	display: inline-block;
@@ -142,8 +143,9 @@ input[type=checkbox]:after {
 	border-radius: 25%;
 }
 
-input[type=checkbox]:checked:after {
-	content: "\2714";
+input:checked:after {
+	content: "\f00c";
+	font-family: 'FontAwesome';
 	text-align: center;
 	color: #bf0c0c;
 	background-color: white;
