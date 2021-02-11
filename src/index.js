@@ -5,14 +5,14 @@ import menu from "./menu.js";
 const menuItems = menu.items;
 
 
-// sort by menuOrder
+// sort items by menuOrder
 const sortItems = () => {
     menuItems.sort((a, b) => {
         return a.menuOrder - b.menuOrder;
     })
 }
 
-// categorize, check if spicy, render items
+// categorize, render items, check if spicy
 const renderItems = () => menuItems.forEach(item => {
 
     const starters = document.querySelector('#starters');

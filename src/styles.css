@@ -22,8 +22,9 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    height: 100%;
 }
+
+/* header */
 
 .background-image {
     background-size: cover;
@@ -34,29 +35,22 @@ body {
     background-image: url('../assets/italian-food.jpg');
 	justify-content: center;
 	align-items: flex-end;
-	flex-wrap:wrap;
 }
 
 h1 {
-    /* font-family:'Kristi', cursive; */
 	font-family: 'Lora', serif;
-	font-size: 7vw;
+	font-size: 10rem;
+	text-align: center;
 	color: white;
 	display: flex;
 	margin: 0;
-	padding: 0 0 3rem 0;
+	padding-bottom: 4rem;
 	opacity: 0.8;
 	text-shadow: 2px 2px black;
 }
 
-h2 {
-	font-family: 'Kristi', cursive;
-	font-weight: 400;
-	font-size: 6vw;
-	color: #a68b7c
-}
 
-
+/* menu items */
 
 main {
 	display: flex;
@@ -66,16 +60,21 @@ main {
 }
 
 section {
-	
 	display: flex;
 	flex-direction: column;
 	flex: 1 1 0px;
 	align-items: center;
-	padding: 0 4rem 6rem 4rem
+	padding: 0 4rem 6rem 4rem;
+}
+
+h2 {
+	font-family: 'Kristi', cursive;
+	font-size: 10rem;
+	font-weight: 400;
+	color: #a68b7c;
 }
 
 .item-container {
-	
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -96,7 +95,6 @@ h3 {
 	text-align: center;
 	padding-bottom: 2rem;
 	flex: 1 1 0px;
-	
 }
 
 p {
@@ -112,19 +110,20 @@ p {
 	padding-bottom: 4rem;
 }
 
+.spicy {
+	margin-left: 15px;
+}
+
+
+/* checkbox */
+
 .check-container {
 	padding: 2rem 0 2rem 0;
 	text-align: center;
 	display: flex;
 	justify-content: center;
-	background-color: #626369;
+	background-color: #a68b7c;
 	border-top: 1px dotted #ffb22c;
-	
-}
-
-.spicy {
-	margin-left: 15px;
-	align-self: baseline;
 }
 
 label {
@@ -155,4 +154,44 @@ input[type=checkbox]:checked:after {
 	text-align: center;
 	color: #bf0c0c;
 	background-color: white;
+}
+
+
+/* media queries */
+
+@media (max-width: 1024px) {
+	main {
+		flex-direction: column;
+	}
+
+	h1 {
+		font-size: 8rem;
+	}
+
+	h3 {
+		font-size: 3rem;
+	}
+
+	p, .price {
+		font-size: 2.5rem;
+	}
+
+	.item-container:after {
+		width: 80vw;
+		border-bottom: 2px dotted #a68b7c;
+		
+	}
+}
+
+
+@media (max-width: 768px) {
+	h1 {
+		font-size: 6rem;
+		margin: 0 2rem 0 2rem;
+	}
+
+	label {
+		margin-left: -3rem;
+		font-size: 3rem;
+	}
 }
